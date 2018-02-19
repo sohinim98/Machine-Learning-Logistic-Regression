@@ -14,6 +14,14 @@ J = 1/m * (-y' * log(sigmoid(X * theta)) - (1 - y') * log(1 - sigmoid(X * theta)
 theta_full = [0;subtheta];
 grad = 1/m * (X' * (sigmoid(X * theta)-y)) + lambda/m*theta_full;
 
+% Easier way without subtheta and theta_full
+
+% theta_new = theta;
+% theta_new(1) = 0;
+% reg1 = lambda/(2 * m) * (theta_new' * theta_new);
+% J = 1/m * (-y' * log(sigmoid(X * theta)) - (1 - y') * log(1 - sigmoid(X * theta))) + reg1;
+% grad = 1/m * (X' * (sigmoid(X * theta)-y)) + lambda/m*theta_new;
+
 
 % Compute the cost of a particular choice of theta.
 % Set J to the cost.
